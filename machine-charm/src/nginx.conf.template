@@ -30,6 +30,10 @@ server {
         try_files $uri $uri/ =404; 
     }
 
+    location /assets {
+        try_files $uri =404; 
+    }
+
     location ~ /api$ {
         proxy_pass {{controller_ws_api}};
         proxy_http_version 1.1;
